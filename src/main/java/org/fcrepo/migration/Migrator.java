@@ -117,13 +117,13 @@ public class Migrator {
         sb.append("Please provide the directory path to a configuration file!");
         sb.append("\n");
         sb.append("See: https://github.com/fcrepo4-labs/migration-utils/blob/master/");
-        sb.append("src/main/resources/spring/migration-bean.xml");
+        sb.append("src/main/resources/spring/example-migration-bean.xml");
         sb.append("\n\n");
         sb.append("The configuration file should contain the following (with appropriate values):");
         sb.append("\n");
         sb.append("~~~~~~~~~~~~~~\n");
 
-        final ClassPathResource resource = new ClassPathResource("spring/migration-bean.xml");
+        final ClassPathResource resource = new ClassPathResource("spring/example-migration-bean.xml");
         final InputStream example = resource.getInputStream();
         final BufferedReader reader = new BufferedReader(new InputStreamReader(example));
         String line = reader.readLine();
@@ -133,7 +133,8 @@ public class Migrator {
             line = reader.readLine();
         }
 
-        sb.append("~~~~~~~~~~~~~~\n");
+        sb.append("~~~~~~~~~~~~~~\n\n");
+        sb.append("See top of this output for details.\n");
         sb.append("============================\n");
         System.out.println(sb.toString());
     }
